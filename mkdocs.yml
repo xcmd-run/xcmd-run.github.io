@@ -1,8 +1,22 @@
-site_name: Xcmd
+site_name: Xcmd - 常用命令速查
+site_description: 常用命令速查 - Redis常用命令、Kafka常用命令、MySQL常用命令
+site_url: https://xcmd.run
+use_directory_urls: true
+
 theme:
   name: material
-  theme:
-    palette:
-      primary: deep purple
-      accent: teal
-    language: zh
+  palette:
+    primary: deep purple
+  language: zh
+
+
+plugins:
+  - search:
+      lang:
+        - en
+
+nav:
+  - Home: 'index.md'
+  - Redis: 'redis.md'
+  - Kafka: 'kafka.md'
+  - MySQL: 'mysql.md'
