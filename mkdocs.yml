@@ -18,7 +18,7 @@ plugins:
         - en
 
 nav:
-  - Home: 'index.md'
+  - 首页: 'index.md'
   - Redis: 'redis.md'
   - Kafka: 'kafka.md'
   - MySQL: 'mysql.md'
