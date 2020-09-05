@@ -8,6 +8,8 @@ theme:
   palette:
     primary: deep purple
   language: zh
+  icon:
+    logo: material/access-point
 
 
 plugins:
