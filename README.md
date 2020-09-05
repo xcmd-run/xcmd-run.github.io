@@ -1,2 +1,1 @@
-# xcmd-run.github.io
-xcmd.run
+https://xcmd.run
