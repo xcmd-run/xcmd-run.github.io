@@ -119,3 +119,18 @@
 - `ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight] [SUM|MIN|MAX]` 计算给定的numkeys个有序集合的并集，并且把结果放到destination中。在给定要计算的key和其它参数之前，必须先给定key个数(numberkeys)。
 - `ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight] [SUM|MIN|MAX]` 计算给定的numkeys个有序集合的交集，并且把结果放到destination中。 在给定要计算的key和其它参数之前，必须先给定key个数(numberkeys)。
 - `ZSCAN key cursor [MATCH pattern] [COUNT count]` 迭代集合元素
+
+
+## Pub/Sub
+---
+- `SUBSCRIBE channel [channel ...]` 订阅频道
+- `UNSUBSCRIBE [channel [channel ...]]` 退订频道，没指定channel，退订所有频道
+- `PSUBSCRIBE pattern [pattern ...]` 按模式订阅
+- `PUNSUBSCRIBE [pattern [pattern ...]]` 按模式退订，没指定退出有模式
+- `PUBLISH channel message` 发布消息到指定频道
+- `PUBSUB subcommand [argument [argument ...]]` PUBSUB 是自省命令，能够检测PUB/SUB子系统的状态。
+```
+PUBSUB CHANNELS [pattern]
+PUBSUB NUMSUB [channel-1 ... channel-N]
+PUBSUB NUMPAT
+```
