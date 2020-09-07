@@ -49,3 +49,25 @@
 - `HGETALL key` 获取所有field值 
 - `HSTRLEN key field` 获取field值的字符长度  
 - `HSCAN key cursor [MATCH pattern] [COUNT count]` 迭代hash元素    
+
+
+## List
+---
+- `LLEN key` 获取list的长度  
+- `LPUSH key value [value ...]` 在队列头部插入元素
+- `LPUSHX key value` 当队列存在时，在队列头部插入元素    
+- `LPOP kye` 从队列头部移出一个元素  
+- `RPUSH key value [value ...]` 从队列尾部插入元素
+- `RPUSHX key value` 当队列存在时，在队列尾部插入元素
+- `RPOP kye` 从队列尾部移出一个元素
+- `RPOPLPUSH source destination` 从source队列尾部移出并写入destination队列头部并返回元素  
+- `LPOS key value [RANK rank] [COUNT num-matches] [MAXLEN len]` 返回value在lust中的索引位置  
+- `LINDEX key index` 返回list中index位置的元素  
+- `LINSERT key BEFORE|AFTER poivot value` 在poivot元素之前或之后插入value
+- `LSET key index value` 设置队列index位置的值为value  
+- `LRANGE key start stop` 返回指定区间的元素  
+- `LREM key count value` 移除前 count 次出现的值为 value 的元素, count >0,从头开始，count<0,从尾部开始，count = 0，全部
+- `LTRIM key start stop` 修建list,保留start 到 stop之间的元素
+- `BLPOP key [key ...] timeout` 阻塞模式从队列头部移出一个元素，只至有一个可用元素或超时，timeout=0不超时
+- `BRPOP key [key ...] timeout` 阻塞模式从队列尾部移出一个元素，只至有一个可用元素或超时，timeout=0不超时
+- `BRPOPLPUSH source destination timeout` 阻塞模式从source队列尾部移出并写入destination队列头部并返回元素，只至有一个可用元素或超时，timeout=0不超时  
