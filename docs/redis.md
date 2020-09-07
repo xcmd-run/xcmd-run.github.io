@@ -32,6 +32,20 @@
 - `GETRANGE key start end` 获取子串  
 - `GETSET key value` 设置值并返回之前的值    
 
-
-
-
+## Hash
+---
+- `HSET key field value` 设置一个字段  
+- `HMSET key field value [field value ...]` 批量设置字段    
+- `HSETNX key field value` 当field不存在是设置
+- `HINCRBY key field increment` 指定field增加整数值  
+- `HINCRBYFLOAT key field incremnet` 指定field增加浮点数值    
+- `HDEL key field [field ...]` 删除field
+- `HEXISTS key field` 判断field是否存在
+- `HLEN key` 获取hash元素数量
+- `HKEYS key` 获取hash的所有field 
+- `HVALS key` 获取hash的所有field值 
+- `HGET key field` 获取field值  
+- `HMGET key field [field ...]` 批量获取field值  
+- `HGETALL key` 获取所有field值 
+- `HSTRLEN key field` 获取field值的字符长度  
+- `HSCAN key cursor [MATCH pattern] [COUNT count]` 迭代hash元素    
