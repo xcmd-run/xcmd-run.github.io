@@ -7,7 +7,7 @@
 - [List](redis.md#list)
 - [Set](redis.md#set)
 - [Zset(Sorted Set)](redis.md#zset)
-- [Pub/Sub](redis.md#pub/sub)
+- [Pub/Sub](redis.md#pubsub)
 ## Kafka
 
 ## MySQL
