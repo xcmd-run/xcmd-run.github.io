@@ -71,3 +71,22 @@
 - `BLPOP key [key ...] timeout` 阻塞模式从队列头部移出一个元素，只至有一个可用元素或超时，timeout=0不超时
 - `BRPOP key [key ...] timeout` 阻塞模式从队列尾部移出一个元素，只至有一个可用元素或超时，timeout=0不超时
 - `BRPOPLPUSH source destination timeout` 阻塞模式从source队列尾部移出并写入destination队列头部并返回元素，只至有一个可用元素或超时，timeout=0不超时  
+
+
+## SET
+---
+- `SCARD key` 获取集合元素数量  
+- `SADD key member [member ...]` 向集合中添加元素
+- `SREM key member [member ...]` 删除集合中的元素
+- `SPOP key [count]` 删除count个元素，并返回元素
+- `SISMEMBER key member` 判断member是否是集合成员  
+- `SMEMBERS key` 获取集合所有元素  
+- `SRANDMEMBER key [count]` 随机返回count个元素
+- `SMOVE source distination member` 将source集合member移动到distination集合 
+- `SINTER key [key ...]` 求集合交集
+- `SUNION key [key ...]` 求集合并集
+- `SDIFF key [key ...]` 求集合差集
+- `SINTERSTORE destination key [key ...]` 求集合交集,并存储在集合destination中
+- `SUNIONSTORE destination key [key ...]` 求集合并几,并存储在集合destination中
+- `SDIFFSTORE destination key [key ...]` 求集合差集,并存储在集合destination中  
+- `SSCAN key cursor [MATCH pattern] [COUNT count]` 迭代集合元素
