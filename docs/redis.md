@@ -73,7 +73,7 @@
 - `BRPOPLPUSH source destination timeout` 阻塞模式从source队列尾部移出并写入destination队列头部并返回元素，只至有一个可用元素或超时，timeout=0不超时  
 
 
-## SET
+## Set
 ---
 - `SCARD key` 获取集合元素数量  
 - `SADD key member [member ...]` 向集合中添加元素
@@ -90,3 +90,32 @@
 - `SUNIONSTORE destination key [key ...]` 求集合并几,并存储在集合destination中
 - `SDIFFSTORE destination key [key ...]` 求集合差集,并存储在集合destination中  
 - `SSCAN key cursor [MATCH pattern] [COUNT count]` 迭代集合元素
+
+  
+## ZSet
+---
+- `ZCARD key` 返回有序集合成员数量 
+- `ZCOUNT key min max` 返回score在min和max之间的成员数量 
+- `ZLEXCOUT key min max` 返回指定分值范围的元素数量
+- `ZADD key [NX|XX] [CH] [INCR] score member [score member ...]` 向有序集合添加或更新元素  
+- `ZINCRYBY key incremnet member` 增加member的score评分
+- `ZRANK key member` 返回成员在集合中的索引
+- `ZREVRANK key member` 返回成员在集合中的倒序索引
+- `ZSCORE key member` 返回成员的score值
+- `ZRANGE key start stop [WITHSOCRES]` 根据index返回集合元素 WITHSOCRES 返回score和value
+- `ZREVRANGE key start stop [WITHSOCRES]` 根据index返回集合元素,分值倒序 WITHSOCRES 返回score和value
+- `ZRANGEBYLEZ key min max [LIMIT offset count]` 返回指定成员区间内的成员，按成员字典正序排序, 分数必须相同
+- `ZRANGEBYSCORE key min max [WITHSOCRES] [LIMIT offset count]` 根据score范围返回集合元素
+- `ZREVRANGEBYSCORE key max min [WITHSOCRES] [LIMIT offset count]` 根据score范围返回集合元素,分值倒序
+- `ZREVRANGEBYLEZ key min max [LIMIT offset count]` 返回指定成员区间内的成员，按成员字典倒序排序, 分数必须相同
+- `ZREM key member [member ...]` 删除集合中的成员
+- `ZREMRANGEBYRANK key start stop` 移除有序集key中，指定排名(rank)区间内的所有成员
+- `ZREMRANGEBYSCORE key min max` 移除有序集key中，所有score值介于min和max之间(包括等于min或max)的成员。
+- `ZREMRANGEBYLEX key min max` 删除名称按字典由低到高排序成员之间所有成员
+- `ZPOPMAX key [count]` 移除并返回分值最大的成员
+- `ZPOPMIN key [count]` 移除并返回分值最小的成员
+- `BZPOPMAX key ` 阻塞模式移除并返回分值最大的成员，只至有一个可用元素或超时
+- `BZPOPMIN key ` 阻塞模式移除并返回分值最小的成员，只至有一个可用元素或超时
+- `ZUNIONSTORE destination numkeys key [key ...] [WEIGHTS weight] [SUM|MIN|MAX]` 计算给定的numkeys个有序集合的并集，并且把结果放到destination中。在给定要计算的key和其它参数之前，必须先给定key个数(numberkeys)。
+- `ZINTERSTORE destination numkeys key [key ...] [WEIGHTS weight] [SUM|MIN|MAX]` 计算给定的numkeys个有序集合的交集，并且把结果放到destination中。 在给定要计算的key和其它参数之前，必须先给定key个数(numberkeys)。
+- `ZSCAN key cursor [MATCH pattern] [COUNT count]` 迭代集合元素
