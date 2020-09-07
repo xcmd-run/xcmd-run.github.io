@@ -6,7 +6,7 @@
 - [Hash](redis.md#hash)
 - [List](redis.md#list)
 - [Set](redis.md#set)
-- [Zset(Sorted Set](redis.md#zset)
+- [Zset(Sorted Set)](redis.md#zset)
 
 ## Kafka
 
