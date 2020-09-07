@@ -1,6 +1,11 @@
 # Xcmd
 
 ## Redis
+- [Keys](redis.md#keys)
+- [String](redis.md#string)
+- [Hash](redis.md#hash)
+- [List](redis.md#list)
+- [Set](redis.md#set)
 
 ## Kafka
 
