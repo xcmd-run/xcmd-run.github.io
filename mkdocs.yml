@@ -20,5 +20,6 @@ plugins:
 nav:
   - 首页: 'index.md'
   - Redis: 'redis.md'
+  - Zookeeper: 'zookeeper.md'
   - Kafka: 'kafka.md'
   - MySQL: 'mysql.md'
