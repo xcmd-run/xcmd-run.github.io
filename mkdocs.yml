@@ -2,6 +2,9 @@ site_name: Xcmd - 常用命令速查
 site_description: 常用命令速查 - Redis常用命令、Kafka常用命令、MySQL常用命令
 site_url: https://xcmd.run
 use_directory_urls: true
+google_analytics:
+  - UA-177623523-1
+  - auto
 
 theme:
   name: material
