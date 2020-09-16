@@ -25,3 +25,7 @@ server.1=zoo1:2888:3888
 server.2=zoo2:2888:3888
 server.3=zoo3:2888:3888
 ```
+
+---
+参考资料：
+https://developer.aliyun.com/article/772373?utm_content=g_1000182349
