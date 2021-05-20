@@ -1,0 +1,779 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="常用命令速查 - Redis常用命令、Kafka常用命令、MySQL常用命令">
+      
+      
+      
+      
+        <link rel="canonical" href="https://xcmd.run/mysql/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+    
+    
+      
+        <title>MySQL - Xcmd - 常用命令速查</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bde7dde4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-177623523-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mysql-80" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Xcmd - 常用命令速查" class="md-header__button md-logo" aria-label="Xcmd - 常用命令速查" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 4.93A9.969 9.969 0 0 0 2 12c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.938 7.938 0 0 1 4 12c0-2.21.89-4.22 2.34-5.66L4.93 4.93m14.14 0-1.41 1.41A7.955 7.955 0 0 1 20 12c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.969 9.969 0 0 0 22 12c0-2.76-1.12-5.26-2.93-7.07M7.76 7.76A5.98 5.98 0 0 0 6 12c0 1.65.67 3.15 1.76 4.24l1.41-1.41A3.99 3.99 0 0 1 8 12c0-1.11.45-2.11 1.17-2.83L7.76 7.76m8.48 0-1.41 1.41A3.99 3.99 0 0 1 16 12c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 12c0-1.65-.67-3.15-1.76-4.24M12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xcmd - 常用命令速查
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MySQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Xcmd - 常用命令速查" class="md-nav__button md-logo" aria-label="Xcmd - 常用命令速查" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.93 4.93A9.969 9.969 0 0 0 2 12c0 2.76 1.12 5.26 2.93 7.07l1.41-1.41A7.938 7.938 0 0 1 4 12c0-2.21.89-4.22 2.34-5.66L4.93 4.93m14.14 0-1.41 1.41A7.955 7.955 0 0 1 20 12c0 2.22-.89 4.22-2.34 5.66l1.41 1.41A9.969 9.969 0 0 0 22 12c0-2.76-1.12-5.26-2.93-7.07M7.76 7.76A5.98 5.98 0 0 0 6 12c0 1.65.67 3.15 1.76 4.24l1.41-1.41A3.99 3.99 0 0 1 8 12c0-1.11.45-2.11 1.17-2.83L7.76 7.76m8.48 0-1.41 1.41A3.99 3.99 0 0 1 16 12c0 1.11-.45 2.11-1.17 2.83l1.41 1.41A5.98 5.98 0 0 0 18 12c0-1.65-.67-3.15-1.76-4.24M12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2 2 2 0 0 0-2-2z"/></svg>
+
+    </a>
+    Xcmd - 常用命令速查
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redis/" class="md-nav__link">
+        Redis
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zookeeper/" class="md-nav__link">
+        Zookeeper
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kafka/" class="md-nav__link">
+        Kafka
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MySQL
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm-install" class="md-nav__link">
+    rpm install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-install" class="md-nav__link">
+    docker install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    MySQL程序参数
+  </a>
+  
+    <nav class="md-nav" aria-label="MySQL程序参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    命令行参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    命令行连接服务器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    读写分离、高可用
+  </a>
+  
+    <nav class="md-nav" aria-label="读写分离、高可用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxscale" class="md-nav__link">
+    MaxScale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxysql" class="md-nav__link">
+    ProxySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+    <nav class="md-nav" aria-label="安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpm-install" class="md-nav__link">
+    rpm install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-install" class="md-nav__link">
+    docker install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    MySQL程序
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    MySQL程序参数
+  </a>
+  
+    <nav class="md-nav" aria-label="MySQL程序参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    命令行参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    文件参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    命令行连接服务器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    读写分离、高可用
+  </a>
+  
+    <nav class="md-nav" aria-label="读写分离、高可用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maxscale" class="md-nav__link">
+    MaxScale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxysql" class="md-nav__link">
+    ProxySQL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="mysql-80">MySQL 8.0</h1>
+<h2 id="_1">安装</h2>
+<h3 id="rpm-install">rpm install</h3>
+<ol>
+<li>下载安装包 https://dev.mysql.com/downloads/mysql/</li>
+<li><code>wget https://cdn.mysql.com//Downloads/MySQL-8.0/mysql-community-server-8.0.21-1.el7.x86_64.rpm
+   mysql-community-common-8.0.21-1.el7.x86_64.rpm
+   mysql-community-libs-8.0.21-1.el7.x86_64.rpm
+   mysql-community-client-8.0.21-1.el7.x86_64.rpm</code></li>
+<li>sudo yum install mysql-community-server-8.0.21-1.el7.x86_64.rpm</li>
+<li>yum repolist enabled | grep "mysql.<em>-community.</em>"</li>
+<li>sudo yum module disable mysql</li>
+<li>sudo yum install mysql-community-server</li>
+<li>sudo service mysqld start</li>
+<li>sudo service mysqld status</li>
+<li>sudo grep 'temporary password' /var/log/mysqld.log</li>
+<li><code>mysql -uroot -p
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'A1b2C#d4E%';</code></li>
+</ol>
+<h3 id="docker-install">docker install</h3>
+<ol>
+<li>docker pull mysql/mysql-server:8.0.21</li>
+<li><code>docker run --name=mysql --restart on-failure -d mysql/mysql-server:8.0.21</code>
+    <code>docker run --name mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=A1b2C#d4E% --mount type=bind,src=/opt/mysql/my.cnf,dst=/etc/my.cnf --mount type=bind,src=/opt/mysql/data,dst=/var/lib/mysql mysql/mysql-server:8.0.21</code></li>
+<li>docker logs mysql</li>
+<li>docker logs mysql 2&gt;&amp;1 | grep GENERATED</li>
+<li>docker exec -it mysql mysql -uroot -p</li>
+<li>ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';</li>
+<li>docker exec -it mysql bash</li>
+<li>ls /var/lib/mysql</li>
+</ol>
+<h2 id="_2">常用命令</h2>
+<ol>
+<li>连接： <code>mysql -h host -u user -p</code></li>
+<li>查看版本 <code>SELECT VERSION(), NOW();</code></li>
+<li>查看数据库 <code>SHOW DATABASES;</code></li>
+<li>创建数据库 <code>CREATE DATABASE test;</code></li>
+<li>使用数据库 <code>USE test;</code></li>
+<li>查看表 <code>SHOW TABLES;</code></li>
+<li>创建表 <code>CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);</code></li>
+<li>查看表结构 <code>DESCRIBE pet;</code>
+    <code>+---------+-------------+------+-----+---------+-------+
+    | Field   | Type        | Null | Key | Default | Extra |
+    +---------+-------------+------+-----+---------+-------+
+    | name    | varchar(20) | YES  |     | NULL    |       |
+    | owner   | varchar(20) | YES  |     | NULL    |       |
+    | species | varchar(20) | YES  |     | NULL    |       |
+    | sex     | char(1)     | YES  |     | NULL    |       |
+    | birth   | date        | YES  |     | NULL    |       |
+    | death   | date        | YES  |     | NULL    |       |
+    +---------+-------------+------+-----+---------+-------+
+    6 rows in set (0.00 sec)</code></li>
+<li>
+<p>load数据 <code>LOAD DATA LOCAL INFILE '/path/pet.txt' INTO TABLE pet;</code>
+    <code>Whistler        Gwen    bird    \N      1997-12-09      \N</code>
+    ```
+    SHOW GLOBAL VARIABLES LIKE 'local_infile';
+    +---------------+-------+
+    | Variable_name | Value |
+    +---------------+-------+
+    | local_infile  | OFF   |
+    +---------------+-------+
+    1 row in set (0.00 sec)</p>
+<p>my.cnf 
+local_infile=1
+service mysql restart
+mysql -uroot -p --local_infile=1</p>
+<p>load data local infile '/opt/pet.txt' into table pet; <br />
+Query OK, 1 row affected, 6 warnings (0.02 sec)
+Records: 1  Deleted: 0  Skipped: 0  Warnings: 6</p>
+<p>show warnings limit 10
+<code>10. 写入数据 `INSERT INTO pet VALUES ('Puffball','Diane','hamster','f','1999-03-30',NULL);`
+11. 修改数据 `UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';`
+12. 查询数据 `SELECT name, birth,CURDATE(),TIMESTAMPDIFF(YEAR,birth,CURDATE()) AS age FROM pet WHERE birth &gt;= '1998-1-1' ORDER BY birth DESC;`
+13. 删除数据 `DELETE FROM test WHERE name='Bowser';`
+14. 查看当前数据库 `SELECT DATABASE();`
+15. 查看数据库中的表 `SHOW TABLES;`
+16. 批量执行 `mysql -h host -u user -p ******** &lt; batch-file &gt; mysql.out`
+17. 自定义变量</code>
+SELECT @min_price:=MIN(price),@max_price:=MAX(price) FROM shop;
+SELECT * FROM shop WHERE price=@min_price OR price=@max_price;
+<code>18. 显示建表语句 ` SHOW CREATE TABLE pet \G;`</code>
+<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em>* 1. row </strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong>****
+        Table: pet
+    Create Table: CREATE TABLE <code>pet</code> (
+      <code>name</code> varchar(20) DEFAULT NULL,
+      <code>owner</code> varchar(20) DEFAULT NULL,
+      <code>species</code> varchar(20) DEFAULT NULL,
+      <code>sex</code> char(1) DEFAULT NULL,
+      <code>birth</code> date DEFAULT NULL,
+      <code>death</code> date DEFAULT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+    1 row in set (0.00 sec)
+```</p>
+</li>
+</ol>
+<h2 id="mysql">MySQL程序</h2>
+<ul>
+<li>mysqld MySQL守护进程</li>
+<li>mysqld_safe mysqld启动脚本</li>
+<li>mysql.server 服务启动脚本，系统服务调用脚本启动数据库</li>
+<li>mysqld_multi 启动和停止多个服务器的脚本</li>
+<li>comp_err 构建和安装过程中的错误日志</li>
+<li>mysql_secure_installation 提搞安装的安全性</li>
+<li>mysql_ssl_rsa_setup ssl配置脚本</li>
+<li>mysql_tzinfo_to_sql 加载时区信息</li>
+<li>mysql_upgrade mysql升级程序</li>
+<li>mysql MySQL命令行工具</li>
+<li>mysqladmin 命令行管理工具</li>
+<li>mysqlcheck 表维护,检查,维修,分析,优化表</li>
+<li>mysqldump 数据导出工具</li>
+<li>mysqlimport 数据导入工具</li>
+<li>mysqlpump 导出数据SQL</li>
+<li>mysqlsh 高级客户端和代码编辑器</li>
+<li>mysqlshow 显示数据库信息 数据库、表、列、索引</li>
+<li>mysqlslap mysql监控工具</li>
+<li>innochecksum InnoDB 离线校验工具</li>
+<li>myisam_ftdump MyISAM 全文索引信息工具</li>
+<li>myisamchk MyISAM 表工具</li>
+<li>myisamlog MyISAM 日志工具</li>
+<li>myisampack MyISAM 压缩工具</li>
+<li>mysql_config_editor </li>
+<li>mysqlbinlog binlog 工具</li>
+<li>mysqldumpslow 慢查询日志工具</li>
+<li>mysql_config </li>
+<li>my_print_defaults </li>
+<li>lz4_decompress LZ4 解压工具</li>
+<li>perror 系统错误或错误码查询工具</li>
+<li>zlib_decompress zlib 解压工具</li>
+</ul>
+<h2 id="mysql_1">MySQL程序参数</h2>
+<h3 id="_3">命令行参数</h3>
+<ul>
+<li>使用 <code>-</code> 或 <code>--</code> 来指定参数，<code>-</code> 缩略名，<code>--</code> 全名，例如 <code>-h localhost</code>, <code>--host=localhost</code></li>
+<li>参数名大小写敏感</li>
+<li><code>-</code> 参数和值直接可以使用空格分隔，也可以不使用空格比如<code>-h localhsot</code>、<code>-hlocalhost</code>, <code>--</code> 参数和值直接使用<code>=</code>分隔。</li>
+</ul>
+<pre><code class="language-bash"># 密码test
+mysql -ptest  
+# 密码需要确认，test为数据库
+mysql -p test
+</code></pre>
+<ul>
+<li>参数名中的 <code>-</code> 和<code>_</code>是等效的，如：<code>--skip-grant-tables</code>、<code>--skip_grant_tables</code></li>
+</ul>
+<h3 id="_4">文件参数</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/etc/my.cnf</td>
+<td>Global options</td>
+</tr>
+<tr>
+<td>/etc/mysql/my.cnf</td>
+<td>Global options</td>
+</tr>
+<tr>
+<td>SYSCONFDIR/my.cnf</td>
+<td>Global options</td>
+</tr>
+<tr>
+<td>$MYSQL_HOME/my.cnf</td>
+<td>Server-specific options (server only)</td>
+</tr>
+<tr>
+<td>defaults-extra-file</td>
+<td>The file specified with <code>--defaults-extra-file</code>, if any</td>
+</tr>
+<tr>
+<td>~/.my.cnf</td>
+<td>User-specific options</td>
+</tr>
+<tr>
+<td>~/.mylogin.cnf</td>
+<td>User-specific login path options (clients only)</td>
+</tr>
+<tr>
+<td>DATADIR/mysqld-auto.cnf</td>
+<td>System variables persisted with SET PERSIST or SE PERSIST_ONLY (server only)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">命令行连接服务器</h3>
+<h2 id="_6">读写分离、高可用</h2>
+<h3 id="maxscale">MaxScale</h3>
+<h3 id="proxysql">ProxySQL</h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../kafka/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Kafka
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      
+    
+  </body>
+</html>
