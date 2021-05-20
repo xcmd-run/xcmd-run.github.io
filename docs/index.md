@@ -13,6 +13,7 @@
 - [Zookeeper](zookeeper.md) 
 
 ## Kafka
+- [Kafka](kafka.md)
 
 ## [MySQL](mysql.md) 
 
